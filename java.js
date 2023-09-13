@@ -1,18 +1,31 @@
 
 
 
+let gridsize;
+document.querySelector('#promptBttn').addEventListener('click', function (e) {
+    let gridsize = 10;
+    do {
+        gridsize = +prompt('Enter a grid size [max: 100]')
+    } while (gridsize > 100)
+    
+    makeGrid(gridsize);
 
-function makeGrid(rows, cols){
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-    for (var i = 0; i < (rows * cols); i++){
+})
+// let rows = gridsize;
+// let cols = gridsize;
+const container = document.querySelector('#container');
+function makeGrid(gridsize){
+    container.innerHTML = '';
+   
+    for (var i = 0; i < (gridsize * gridsize); i++){
         let box = document.createElement('div');
-        box.className = 'box';
-        container.appendChild(box)
+        box.classList.add('box');
+        container.style.gridTemplateColumns = `repeat(${gridsize}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${gridsize}, 1fr)`;
+        container.appendChild(box);
     }
 }
 
-makeGrid(16, 16);
 
 const box = document.querySelectorAll('.box');
 [...box].forEach(box => {
@@ -20,3 +33,5 @@ const box = document.querySelectorAll('.box');
         box.classList.add('hover');
     });
 })
+
+
