@@ -1,7 +1,8 @@
-
-
-
+const container = document.querySelector('#container');
 let gridsize;
+
+
+
 document.querySelector('#promptBttn').addEventListener('click', function (e) {
     let gridsize = 10;
     do {
@@ -13,7 +14,8 @@ document.querySelector('#promptBttn').addEventListener('click', function (e) {
 })
 // let rows = gridsize;
 // let cols = gridsize;
-const container = document.querySelector('#container');
+
+
 function makeGrid(gridsize){
     container.innerHTML = '';
    
@@ -23,15 +25,25 @@ function makeGrid(gridsize){
         container.style.gridTemplateColumns = `repeat(${gridsize}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${gridsize}, 1fr)`;
         container.appendChild(box);
+        box.addEventListener('mouseover',colorGrid)
     }
 }
 
 
-const box = document.querySelectorAll('.box');
-[...box].forEach(box => {
-    box.addEventListener('mouseover', () => {
-        box.classList.add('hover');
-    });
-})
+
+function colorGrid(e){
+    
+            e.target.classList.add('hover');
+    }
+
+
+window.onload = makeGrid(16);
+
+// const box = document.querySelectorAll('.box');
+// [...box].forEach(box => {
+//     box.addEventListener('mouseover', () => {
+//         box.classList.add('hover');
+//     });
+// })
 
 

@@ -1,15 +1,21 @@
 
+.hover{
+  background-color: black;
+}
+
 .box {
-  border: 1px solid #e21111;
+  border: 1px solid #000000;
   text-align: center;
   display: inline-block;
   box-sizing: border-box;
   height: 100%;
   }
+ 
   
   body {
     background-color: rgba(0, 0, 0, 0.527);
   }
+  
   #container {
     border: 1px solid black;
     margin:auto;
@@ -22,6 +28,4 @@
   
 
 
-  .hover{
-    background-color: red;
-  }
+  
