@@ -29,12 +29,16 @@ function makeGrid(gridsize){
     }
 }
 
-
-
 function colorGrid(e){
-    
             e.target.classList.add('hover');
     }
+
+const resetBttn = document.querySelector('#resetBttn');
+function resetGrid(){
+    let box = container.querySelectorAll('div');
+    box.forEach(box=> box.classList.remove('hover'));
+}
+resetBttn.addEventListener('click', ()=>resetGrid());
 
 
 window.onload = makeGrid(16);
