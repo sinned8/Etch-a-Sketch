@@ -27,5 +27,34 @@
   }
   
 
+#maincontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+#footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+#promptBttn , #resetBttn{
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
 
-  
+}
+#bttncontainer{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
